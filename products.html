@@ -1,0 +1,44 @@
+<div>
+    <div ng-include="'header.html'"></div>
+    <section class="products" id="products">
+
+        <h1 class="heading" style="margin-top: 100px;"> exclusive <span>Masale</span> </h1>
+
+
+
+        <div class="box-container" ng-controller="productcontroller">
+
+            <div class="box" data-item="featured" ng-repeat="data in data">
+                <!-- <div class="icons">
+                    <a href="#" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div> -->
+                <div class="image">
+                    <img ng-src={{data.image}} alt="">
+                </div>
+                <div class="content">
+                    <h3>{{data.name}}</h3>
+                    <div class="price">
+                        <div class="amount">₹{{data.price}}</div>
+                        <!-- <div class="cut">$25.00</div>
+                        <div class="offer">20% off</div> -->
+                    </div>
+                    <div>
+                        {{data.weight}}gm
+                    </div>
+                    <!-- <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(50)</span>
+                    </div> -->
+                </div>
+            </div>
+</div>
+</section>
+    <div ng-include="'footer.html'"></div>
+</div>

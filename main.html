@@ -1,0 +1,160 @@
+<div>
+  <div ng-include="'header.html'"></div>
+  
+  <div class="homepage">
+    <div>
+      <h2 style="margin-left: 50px; font-weight: 800; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: #eb4d4b;">India’s Most Trusted
+        & Largest Brand
+        Of Spices.</h2>
+    </div>
+   <div>
+    <div ng-controller="slidectrl">
+
+
+      <div class="con container slider">
+
+        <img class="img" ng-repeat="photo in photos | filter:myFilter track by $index | filter:query"
+          class="slide materialboxed" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)"
+          ng-src="{{photo.src}}" />
+
+        <!-- prev / next controls -->
+        <a class="arrow prev" ng-click="showPrev()"></a>
+        <a class="arrow next" ng-click="showNext()"></a>
+
+        <!-- Thumbnails -->
+        <!-- <ul class="nav" style="margin-top: 10px;">
+          <li class="li" ng-repeat="photo in photos | filter:myFilter track by $index"
+            ng-class="{'active':isActive($index)}">
+            <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+          </li>
+        </ul> -->
+      </div>
+
+    </div>
+   </div>
+  
+</div>
+<div>
+  <div ng-include="'about.html'"></div>
+  
+   <div ng-include="'footer.html'"></div>
+</div>
+    <style>
+      .homepage {
+        margin-top: 90px;
+       
+      }
+
+      .img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .arrow,
+      .arrow.prev,
+      .arrow.next {
+        cursor: pointer;
+        display: block;
+        height: 64px;
+        outline: medium none;
+        position: absolute;
+        top: 50%;
+        width: 64px;
+        z-index: 5;
+      }
+
+      .arrow.prev {
+        left: 20px;
+      }
+
+      .arrow.next {
+        right: -20px;
+      }
+
+      .material-icons {
+        font-size: 50px !important;
+      }
+
+      .arrow.prev:hover,
+      .arrow.next:hover {
+        opacity: 1;
+      }
+
+      .nav {
+        bottom: 0;
+        display: block;
+        height: 80px;
+        left: 0;
+        margin: 0 auto;
+        padding: 1em 0 0.8em;
+        /* position: absolute; */
+        right: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 5;
+      }
+
+      .nav .li {
+        border: 1px solid #bbb;
+        cursor: pointer;
+        display: inline-block;
+        height: 40px;
+        margin: 0 8px;
+        position: relative;
+        width: 60px;
+      }
+
+      .nav .arrow.next:hover.active {
+        border: 2px solid blue;
+      }
+
+      .nav .li img {
+        width: 100%;
+      }
+
+     
+
+      .slider {
+        border: 15px solid #FFFFFF;
+        border-radius: 5px;
+        height: 650px;
+        margin: 20px auto;
+        position: relative;
+        width:100% !important;
+        perspective: 1000px;
+      }
+
+      .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .slide.ng-hide-add,
+      .slide.ng-hide-remove {
+        opacity: 1;
+      }
+
+      .slide.ng-hide-add.ng-hide-add-active {
+        opacity: 0;
+      }
+
+      .slide,
+      .slide.ng-hide-remove.ng-hide-remove-active {
+        opacity: 1;
+      }
+      @media(max-width:1190px){
+        .homepage {
+        
+       flex-direction: column;
+      }
+      }
+      @media(max-width:600px) {
+        .slider {
+          max-height: 400px;
+        } 
+      }
+    </style>
+  </div>
+</div>

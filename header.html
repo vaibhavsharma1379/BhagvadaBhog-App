@@ -1,0 +1,190 @@
+<div>
+
+    <div class="nav-area">
+
+        <label for="boxt" class="btn-area"><i class="fa fa-bars"></i></label>
+        <!-- <input type="checkbox" id="boxt"> -->
+        <input type="checkbox" class="boxt" id="boxt" />
+        <label class="logo"><img class="imgs" src="./images/logo.png" alt="logo"></label>
+        <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#/products">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Blog</a></li> -->
+            <li><a href="#/contact">Contact</a></li>
+            <li><a href="#/login">Admin Login</a></li>
+        </ul>
+
+    </div>
+    <style>
+        /* * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        } */
+
+        body {
+            font-family: lato;
+        }
+
+        .nav-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            max-height: 70px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: #fff;
+
+        }
+
+        .logo {
+            /* line-height: 70px; */
+            padding: 0 40px;
+        }
+
+        .imgs {
+            max-width: 450px;
+            max-height: 70px;
+            margin-left: 70px;
+        }
+
+        .nav-area ul {
+            float: right;
+            margin-right: 30px;
+
+        }
+
+        .nav-area ul li {
+            display: inline-block;
+            line-height: 60px;
+            margin: 0 20px;
+        }
+
+        .nav-area ul li a {
+            color: #eb4d4b;
+            font-size: 20px;
+            padding: 22px 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .nav-area ul li a:hover {
+            color: #268626;
+            /* color: #268626; */
+            transition: .5s;
+            position: relative;
+            padding-bottom: 10px;
+
+            /* Create the line */
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #268626;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Move the line from left to right on hover */
+            &:hover::after {
+                right: 0%;
+            }
+        }
+
+
+
+        .btn-area {
+            font-size: 30px;
+            color: #eb4d4b;
+            float: right;
+            line-height: 62px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .boxt {
+            display: none;
+            z-index: -100;
+            /* border-color: #fff; */
+            /* background-color: #fff; */
+
+        }
+
+        @media (max-width: 1100px) {
+            .btn-area {
+                display: block;
+                top: 4;
+            }
+
+            .nav-area ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: white;
+                top: 62px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+                z-index: 2;
+
+            }
+
+            .nav-area ul li {
+                display: block;
+                margin: 0;
+                line-height: 30px;
+                padding: 25px 0;
+            }
+
+            .nav-area ul li a {
+                font-size: 30px;
+            }
+
+            .nav-area ul li a:hover {
+                color: #268626;
+                transition: .5s;
+                position: relative;
+                padding-bottom: 10px;
+
+                /* Create the line */
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #268626;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                /* Move the line from left to right on hover */
+                &:hover::after {
+                    right: 0%;
+                }
+            }
+
+            .nav-area ul li a:hover {
+                background: none;
+            }
+
+            .boxt:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+
+</div>

@@ -1,0 +1,212 @@
+<div>
+
+    <style>
+        .container {
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 700px;
+            max-height: 600px;
+        }
+
+        .text-container {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image {
+            width: 30%;
+            height: 45%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .image-1 {
+            z-index: 4;
+        }
+
+        .image-2 {
+            z-index: 3;
+        }
+
+        .image-3 {
+            z-index: 2;
+        }
+
+        .image-4 {
+            z-index: 1;
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-10%, -10%);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(180deg);
+            }
+        }
+
+        @keyframes scale {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes skew {
+            from {
+                transform: skew(0deg, 0deg);
+            }
+
+            to {
+                transform: skew(20deg, 20deg);
+            }
+        }
+
+
+        .image-1:hover,
+        .image-2:hover,
+        .image-3:hover,
+        .image-4:hover {
+            animation-play-state: paused;
+        }
+
+        /* Media queries for smaller screens */
+
+        @media (max-width:768px) {
+            .container {
+                height: 150vh;
+                /* max-width: 300px; */
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .image-container {
+                width: 100%;
+                /* max-width: 300px;
+   max-height: 250px; */
+            }
+
+            .text-container {
+                width: 100%;
+            }
+
+            .image {
+                max-width: 200px;
+                width: 70%;
+                height: 50%;
+                max-height: 250px;
+            }
+
+            .image-1,
+            .image-2,
+            .image-3,
+            .image-4 {
+                animation-name: none;
+                animation-duration: none;
+                animation-iteration-count: none;
+                animation-direction: none;
+            }
+
+        }
+
+        @media (max-width :480px) {
+
+            .image-container,
+            .text-container {
+                height: 50%;
+            }
+
+            .image {
+                width: 75%;
+                height: 75%;
+            }
+
+          
+   from {
+     transform :skew(0deg,0deg); 
+   }
+   
+   to {
+     transform :skew(60deg,60deg); 
+   }
+ } */
+
+            .image-1,
+            .image-2,
+            .image-3,
+            .image-4 {
+                animation-name: none;
+                animation-duration: none;
+                animation-iteration-count: none;
+                animation-direction: none;
+            }
+        
+
+        h3 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            color: #eb4d4b;
+        }
+    </style>
+
+    <body>
+
+        <div class="container">
+            <div class="text-container">
+                <div style="margin-left: 50px; margin-right: 50px;">
+                    <h3>About Us</h3>
+                    <p style="font-size: 17px;">BhagvadaBhog is a new company that has entered the spice market with a
+                        vision to revolutionize the way Indians cook and eat. BhagvadaBhog offers a variety of spices
+                        that are made with natural ingredients and authentic recipes. BhagvadaBhog spices are not only
+                        delicious, but also healthy and nutritious. They are free from artificial colours, flavours,
+                        preservatives, and additives. They are also packed in eco-friendly and hygienic packaging that
+                        preserves their freshness and quality.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="./images/about/about1.jpg" class="image image-1"
+                    style="animation-name :move; animation-duration :4s; animation-iteration-count :infinite; animation-direction :alternate;">
+                <img src="./images/about/about2.jpg" class="image image-2"
+                    style="animation-name :rotate; animation-duration :4s; animation-iteration-count :infinite; animation-direction:normal;">
+                <img src="./images/about/about3.jpg" class="image image-3"
+                    style="animation-name :scale; animation-duration :4s; animation-iteration-count :infinite; animation-direction :alternate;">
+                <img src="./images/about/about4.jpg" class="image image-4"
+                    style="animation-name :skew; animation-duration :4s; animation-iteration-count :infinite; animation-direction :alternate;">
+            </div>
+
+        </div>
+
+    </body>
+
+</div>
